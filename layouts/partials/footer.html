@@ -1,9 +1,14 @@
       <footer>
         <hr>
-        <small>
-          &copy; {{ now.Format "2006" }} {{ .Site.Params.author }}.
-          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
-        </small>
+        <span class="license-text">
+          <small>
+            {{ with .Site.Params.license }}
+            Contenu sous licence <a href="{{ .url | relURL }}">{{ .name }}</a>
+            {{ end }}
+            {{ with .Site.Params.author }}par {{ . }} {{ end }}({{ now.Format "2006" }}).
+  <!--          Généré avec <a href="https://gohugo.io/" target="_blank">Hugo</a> avec le thème <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a>.-->
+          </small>
+        </span>
       </footer>
     </div> <!-- closes the container-fluid div -->
 

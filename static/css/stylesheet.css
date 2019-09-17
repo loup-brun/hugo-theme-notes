@@ -1,34 +1,45 @@
 body {
-    font-family: 'Ubuntu', sans-serif;
-    margin: auto;
-    max-width: 50em;
+  font-family: Charter, 'CharterITC', 'ITC Charter Std', Georgia, serif;
+  margin: auto;
+  max-width: 50em;
+  font-size: 20px;
 }
 
-#page-title {
-    text-align: center;
+.header--main {
+  padding: 2rem 0;
 }
 
-#page-title h1 a {
-    color: black;
-    font-size: 2.7rem;
+.header--main h1 {
+  margin: 0;
+}
+
+.header--main h1 a {
+  color: black;
+  font-size: 2rem;
 }
 
 .post a {
-    color: black;
-}
-
-#author-name h6 a {
   color: black;
-  font-weight: normal;
-  font-size: small;
 }
 
-#page-title a:hover, .post a:hover {
-    text-decoration: underline;
+.subtitle {
+  color: black;
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.blog-post-subheader time {
+  display: inline;
+}
+
+.header--main a:hover,
+.post a:hover {
+  text-decoration: underline;
 }
 
 .date-time-title {
-    font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 .blog-post-content {
@@ -40,27 +51,38 @@ body {
   list-style-type: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Ubuntu Mono';
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.85rem;
 }
 
 h3 {
   font-size: 1.4rem;
 }
 
-h4  {
+h4 {
   font-size: 1.2rem;
 }
 
-h5  {
+h5 {
   font-size: 1rem;
 }
 
-h6  {
+h6 {
   font-size: 0.8rem;
 }
 
@@ -78,6 +100,7 @@ pre {
   background-color: #efefef
 }
 
-footer  {
+footer {
+  padding: 3rem 0;
   text-align: center;
 }

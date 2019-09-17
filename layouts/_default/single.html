@@ -2,7 +2,14 @@
 <div class="blog-post">
   <h1>{{ .Title }}</h1>
   <div class="blog-post-subheader">
-    <time>{{ .Date.Format "02 Jan 2006" }}</time>
+    <div class="row align-items-start">
+      <div class="col-auto">
+        Date&nbsp;:&nbsp;
+      </div>
+      <div class="col-auto">
+        <time>{{ .Date.Format "2006/01/02" }}</time>
+      </div>
+    </div>
   </div>
   <div class="blog-post-content">
     {{ .Content }}

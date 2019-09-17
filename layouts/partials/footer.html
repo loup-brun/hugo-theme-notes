@@ -2,9 +2,7 @@
         <hr>
         <span class="license-text">
           <small>
-            {{ with .Site.Params.license }}
-            Contenu sous licence <a href="{{ .url | relURL }}">{{ .name }}</a>
-            {{ end }}
+            Contenu sous licence <a href="{{ resources.Get (.Site.Params.license.url | default "/LICENSE") }}">{{ .Site.Params.license.name | default "CC-BY-SA 4.0" }}</a>
             {{ with .Site.Params.author }}par {{ . }} {{ end }}({{ now.Format "2006" }}).
   <!--          Généré avec <a href="https://gohugo.io/" target="_blank">Hugo</a> avec le thème <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a>.-->
           </small>

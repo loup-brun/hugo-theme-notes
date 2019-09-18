@@ -1,18 +1,20 @@
-      <footer>
-        <hr>
-        <span class="license-text">
-          <small>
-            Contenu sous licence <a href="{{ resources.Get (.Site.Params.license.url | default "/LICENSE") }}">{{ .Site.Params.license.name | default "CC-BY-SA 4.0" }}</a>
-            {{ with .Site.Params.author }}par {{ . }} {{ end }}({{ now.Format "2006" }}).
-  <!--          Généré avec <a href="https://gohugo.io/" target="_blank">Hugo</a> avec le thème <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a>.-->
-          </small>
-        </span>
-      </footer>
-    </div> <!-- closes the container-fluid div -->
-
-    <!-- load bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
-</html>
+<footer>
+  <hr>
+  <span class="license-text">
+    <small>
+      Contenu sous licence <a href="{{ .Site.Params.license.url | default "/LICENSE" }}" target="_blank">{{ .Site.Params.license.name | default "CC-BY-SA 4.0" }}</a>
+      {{ with .Site.Params.author }}par {{ . }} {{ end }}({{ now.Format "2006" }}).
+<!--          Généré avec <a href="https://gohugo.io/" target="_blank">Hugo</a> avec le thème <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a>.-->
+    </small>
+  </span>
+  <br>
+  {{ if .Site.Params.repo }}
+  <span class="repo-text">
+    <small>
+      <a href="{{ .Site.Params.repo }}" target="_blank">Dépôt</a>
+      | 
+      <a href="{{ .Site.Params.repo }}/raw/branch/master/{{ .File.Path }}" target="_blank">Code source de cette page</a>
+    </small>
+  </span>
+  {{ end }}
+</footer>

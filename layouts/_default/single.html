@@ -1,18 +1,23 @@
 {{ define "content" }}
-<div class="blog-post">
-  <h1>{{ .Title }}</h1>
-  <div class="blog-post-subheader">
-    <div class="row align-items-start">
-      <div class="col-auto">
-        Date&nbsp;:&nbsp;
-      </div>
-      <div class="col-auto">
-        <time>{{ .Date.Format "2006/01/02" }}</time>
-      </div>
-    </div>
-  </div>
-  <div class="blog-post-content">
+<main class="main row">
+  
+  <aside class="main-aside col-md-3 order-md-2">
+    {{ .TableOfContents }}
+  </aside>
+
+  <article class="main-content col-md-9 order-md-1">
+    {{- if isset . "Title" -}}
+    <h1>
+      {{ .Title }}
+    </h1>
+    {{- end -}}
+
+    <header class="main-subheader">
+      <time>{{ .Date.Format "2006/01/02" }}</time>
+    </header>
+
     {{ .Content }}
-  </div>
-</div>
+
+  </article>
+</main>
 {{ end }}

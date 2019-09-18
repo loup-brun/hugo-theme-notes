@@ -6,7 +6,8 @@ body {
 }
 
 .header--main {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #eee;
 }
 
 .header--main h1 {
@@ -29,8 +30,9 @@ body {
   font-size: 1rem;
 }
 
-.blog-post-subheader time {
+.main-subheader time {
   display: inline;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 .header--main a:hover,
@@ -42,9 +44,53 @@ body {
   font-family: 'Ubuntu Mono', monospace;
 }
 
-.blog-post-content {
+.main {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.main-aside {
+  position: relative;
+  border-left: 1px dashed #ccc;
+  padding-top: 1rem;
+}
+
+.main-aside #TableOfContents {
+  position: sticky;
+  top: 1rem;
+  font-size: .85rem;
+}
+
+#TableOfContents ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+#TableOfContents ul ul {
+  padding-left: 1em;
+}
+
+#TableOfContents a {
+  color: #555;
+  text-decoration: none;
+}
+#TableOfContents a:hover {
+  background-color: yellow;
+}
+
+#TableOfContents .active > a {
+  background-color: #333;
+  color: #fff;
+}
+
+.main-content {
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+.main-content img {
+  max-width: 100%;
+/*  display: block;*/
 }
 
 .posts_listing li {
@@ -92,10 +138,15 @@ code {
   overflow-x: auto;
 }
 
+blockquote {
+  padding-left: 2rem;
+  border-left: 1px solid #ccc;
+  font-size: .9rem;
+}
+
 pre {
   overflow-x: auto;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 8px;
   border: 1px solid lighten(#111, 90);
   background-color: #efefef
 }

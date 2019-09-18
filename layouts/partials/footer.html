@@ -12,8 +12,10 @@
   <span class="repo-text">
     <small>
       <a href="{{ .Site.Params.repo }}" target="_blank">Dépôt</a>
-      | 
+      {{ if .File }}
+      |
       <a href="{{ .Site.Params.repo }}/raw/branch/master/{{ .File.Path }}" target="_blank">Code source de cette page</a>
+      {{ end }}
     </small>
   </span>
   {{ end }}

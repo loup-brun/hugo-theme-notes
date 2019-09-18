@@ -61,7 +61,7 @@ params:
 
 #### Add Links to GitHub and GitLab
 
-Add GitHub and GitLab usernames to `.Site.Params.github` and `.Site.Params.gitlab` parameters in your `config.toml` file. Links to these accounts would show up in the top navigation bar. If these parameters are not present or is left blank, the links would disappear.
+Add GitHub and GitLab usernames to `.Site.Params.github` and `.Site.Params.gitlab` parameters in your `config.yaml` file. Links to these accounts would show up in the top navigation bar. If these parameters are not present or is left blank, the links would disappear.
 
 See below for an example:
 ```

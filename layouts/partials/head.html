@@ -5,7 +5,20 @@
   <!-- load bootstrap css -->
   <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | relURL }}">
 
-  <title>{{ if isset . "Title" }}{{ .Title }} | {{ else }} {{ if isset .Params "seance" }}Séance {{ .Params.seance }} | {{ end }}{{ end }}{{ .Site.Title }}</title>
+  <title>
+    {{- if eq .Page.Kind "section" -}}
+    {{ .Title | title }} | 
+    {{- else if isset .Params "title" -}}
+    {{- .Title }} | 
+    {{- else if and (isset $.Site.Params "posts") (isset .Params $.Site.Params.posts) -}}
+    {{- $.Site.Params.posts.title }} {{ .Param $.Site.Params.posts.prop }} | 
+    {{ else if isset .Params .Section -}}
+    {{- .Parent.Section | title }} {{ .Param .Section }} | 
+    {{ end -}}
+    {{ with .Site.Title }}
+    {{ . -}}
+    {{- end -}}
+    </title>
 
   <link rel="stylesheet" href="{{ "/css/stylesheet.css" | relURL }}">
 

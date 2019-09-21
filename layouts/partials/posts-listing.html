@@ -1,16 +1,18 @@
 <ul class="posts_listing">
-  {{ range .ByDate }}
+  {{ range .Pages.ByDate }}
   <li>
     <div class="row" id="posts">
       <div class="d-none d-sm-block col-sm-3 col-md-2 date-time-title">
-        <time>{{ .Date.Format "2006/01/02" }}</time>
+        <time class="date-time">{{ .Date.Format "2006/01/02" }}</time>
       </div>
       <div class="col-sm date-time-title post">
         <a href="{{ .Permalink }}">
           {{ if isset .Params "title" }}
           {{ .Title }}
-          {{ else if isset .Params "seance" }}
-          Séance {{ .Params.seance }}
+          {{- else if and (isset $.Site.Params "posts") (isset .Params $.Site.Params.posts.prop) -}}
+          {{ $.Site.Params.posts.title }} {{ .Param $.Site.Params.posts.prop }}
+          {{ else if isset .Params .Parent.Section }}
+          {{ .Parent.Section | title }} {{ .Param .Parent.Section }}
           {{ else }}
           (Sans titre)
           {{ end }}

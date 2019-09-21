@@ -5,19 +5,23 @@
     {{ if .Sections }}
     
     {{ range .Sections }}
-    <h2>{{ .Title }}</h2>
+    <h2 class="mt-0">
+      <a href="{{ .Permalink }}">
+        {{- .Title -}}
+      </a>
+    </h2>
     
-    {{ partial "posts-listing.html" .Pages }}
+    {{ partial "posts-listing.html" . }}
 
     {{ end }}
     
     {{ else }}
   
     {{ with .Title }}
-    <h1>{{ . }}</h1>
+    <h1 class="mt-0">{{ . }}</h1>
     {{ end }}
 
-    {{ partial "posts-listing.html" .Pages }}
+    {{ partial "posts-listing.html" . }}
     {{ end }}
   </article>
 </main>

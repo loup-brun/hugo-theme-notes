@@ -7,17 +7,26 @@ body {
 }
 
 .header--main {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid #eee;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
-.header--main h1 {
+.header--main__title {
   margin: 0;
 }
-
-.header--main h1 a {
+.header--main__title a {
   color: black;
   font-size: 2rem;
+}
+.header--main__subtitle {
+  font-size: 1rem;
+  color: #999;
+}
+
+.navbar {
+  padding: .5rem 0;
+  font-size: 13px;
 }
 
 .post a {
@@ -29,6 +38,10 @@ body {
   font-family: 'Ubuntu Mono', monospace;
   font-weight: normal;
   font-size: 1rem;
+}
+
+.main-subheader {
+  margin-bottom: 1rem;
 }
 
 .main-subheader time {
@@ -94,6 +107,10 @@ body {
 /*  display: block;*/
 }
 
+.posts_listing {
+  padding: 0;
+}
+
 .posts_listing li {
   list-style-type: none;
 }
@@ -107,6 +124,14 @@ h6 {
   font-family: 'Ubuntu Mono';
   font-weight: bold;
   margin-top: 3rem;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: black;
 }
 
 h1 {

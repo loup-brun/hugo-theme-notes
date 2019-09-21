@@ -1,28 +1,24 @@
 {{ define "content" }}
 <main class="main">
   <article class="main-content">
-    <ul class="posts_listing">
-      {{ range .Site.RegularPages.ByDate }}
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 col-md-2 date-time-title">
-            <time>{{ .Date.Format "2006/01/02" }}</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="{{ .Permalink }}">
-              {{ if isset .Params "seance" }}
-              Séance {{ .Params.seance }}
-              {{ else if isset . "Title" }}
-              {{ .Title }}
-              {{ else }}
-              (Sans titre)
-              {{ end }}
-            </a>
-          </div>
-        </div>
-      </li>
-      {{ end }}
-    </ul>
+    
+    {{ if .Sections }}
+    
+    {{ range .Sections }}
+    <h2>{{ .Title }}</h2>
+    
+    {{ partial "posts-listing.html" .Pages }}
+
+    {{ end }}
+    
+    {{ else }}
+  
+    {{ with .Title }}
+    <h1>{{ . }}</h1>
+    {{ end }}
+
+    {{ partial "posts-listing.html" .Pages }}
+    {{ end }}
   </article>
 </main>
 {{ end }}

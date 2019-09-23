@@ -6,6 +6,13 @@ body {
   line-height: 1.42;
 }
 
+.is-draft {
+  background-color: beige;
+}
+.is-draft body {
+  background-color: beige;
+}
+
 .header--main {
   padding: 1rem 0;
   border-bottom: 1px solid #eee;
@@ -182,7 +189,17 @@ pre {
   border-radius: 3px;
 }
 
+mark {
+  background-color: yellow;
+}
+
 footer {
   padding: 3rem 0;
   text-align: center;
+}
+
+.badge {
+  font-family: 'Ubuntu Mono', monospace;
+  letter-spacing: .1em;
+  font-weight: normal;
 }

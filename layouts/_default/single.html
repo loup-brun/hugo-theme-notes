@@ -14,6 +14,12 @@
 
     <header class="main-subheader">
       <time class="date-time">{{ .Date.Format "2006/01/02" }}</time>
+
+      {{ if .Draft -}}
+      <span class="badge badge-dark">
+        BROUILLON
+      </span>
+      {{- end -}}
     </header>
 
     {{ .Content }}

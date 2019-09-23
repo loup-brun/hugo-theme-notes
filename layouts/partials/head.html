@@ -10,8 +10,8 @@
     {{ .Title | title }} | 
     {{- else if isset .Params "title" -}}
     {{- .Title }} | 
-    {{- else if and (isset $.Site.Params "posts") (isset .Params $.Site.Params.posts) -}}
-    {{- $.Site.Params.posts.title }} {{ .Param $.Site.Params.posts.prop }} | 
+    {{- else if (eq .Section "notes") -}}
+    Séance {{ .Param "seance" }} | 
     {{ else if isset .Params .Section -}}
     {{- .Parent.Section | title }} {{ .Param .Section }} | 
     {{ end -}}

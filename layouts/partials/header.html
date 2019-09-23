@@ -30,21 +30,25 @@
   {{- if .Site.Title -}}
   <h1 class="header--main__title">
     <a href="{{ .Site.Params.baseURL | relURL }}">
-      {{ .Site.Title | default "Notes de cours"}}
+      {{ .Site.Title | markdownify}}
     </a>
   </h1>
   {{- end -}}
   
+  {{ with .Site.Params.Author -}}
+  <span id="author-name" class="subtitle">
+    {{- . }}
+  </span>
+  {{ end }}
+
+  {{- if and .Site.Params.subtitle .Site.Params.Author }}
+  {{ .Site.Params.subtitleDivider | default "/" }} 
+  {{ end -}}
+
   {{- with .Site.Params.subtitle -}}
   <span class="header--main__subtitle">
-    {{ . }}
+    {{ . | markdownify }}
   </span>
   {{- end -}}
-  
-  {{- if and .Site.Params.subtitle .Site.Params.Author }}
-  – 
-  {{ end -}}
-  <span id="author-name" class="subtitle">
-    {{ .Site.Params.Author }}
-  </span>
+
 </header>

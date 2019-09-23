@@ -9,14 +9,20 @@
         <a href="{{ .Permalink }}">
           {{ if isset .Params "title" }}
           {{ .Title }}
-          {{- else if and (isset $.Site.Params "posts") (isset .Params $.Site.Params.posts.prop) -}}
-          {{ $.Site.Params.posts.title }} {{ .Param $.Site.Params.posts.prop }}
-          {{ else if isset .Params .Parent.Section }}
+          {{- else if (eq .Section "notes") -}}
+          Séance {{ .Param "seance" }}
+          {{- else if isset .Params .Parent.Section -}}
           {{ .Parent.Section | title }} {{ .Param .Parent.Section }}
-          {{ else }}
+          {{- else -}}
           (Sans titre)
-          {{ end }}
+          {{- end -}}
         </a>
+        
+        {{ if .Draft -}}
+        <span class="badge badge-dark">
+          BROUILLON
+        </span>
+        {{- end -}}
       </div>
     </div>
   </li>

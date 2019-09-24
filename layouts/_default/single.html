@@ -13,7 +13,14 @@
     {{- end -}}
 
     <header class="main-subheader">
+      {{ if isset .Params "date" }}
       <time class="date-time">{{ .Date.Format "2006/01/02" }}</time>
+      {{ else }}
+      {{/* `.Lastmod` doesn't seem to work at the moment (Hugo v0.58) */}}
+      {{/* .Lastmod.Format "2006/01/02" */}}
+      {{/* Defaulting to ND */}}
+<!--      <i>(Sans date)</i>-->
+      {{ end }}
 
       {{ if .Draft -}}
       <span class="badge badge-dark">

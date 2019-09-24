@@ -1,28 +1,21 @@
-{{- if .Site.Menus -}}
-<nav class="navbar navbar-expand-sm navbar-light">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="nav navbar-nav nav-break">
-      {{ $currentPage := . }}
-      {{ range .Site.Menus.main.ByWeight }}
-      <li class="nav-item{{if or ($currentPage.IsMenuCurrent "main" . ) ($currentPage.HasMenuCurrent "main" . ) }} active{{ end }}{{ if .HasChildren }} dropdown{{ end }}">
-        <a class="nav-link" href="{{ .URL }}">{{ .Title }}{{ if .HasChildren }} <span class="icon icon-angle-down"></span>{{ end }}</a>
-        {{ if .HasChildren }}
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <ul class="dropdown-menu">
-          {{ range .Children.ByWeight }}
-          <li class="dropdown-item">
-            <a class="nav-link" href="{{ .URL }}">{{ .Title }}</a>
-          </li>{{ end }}
-        </ul>{{ end }}
-      </li>
-      {{ end }}
-    </ul>
-  </div>
+{{- if .Site.Menus.main -}}
+<nav class="navbar navbar-expand navbar-light">
+  <ul class="nav navbar-nav">
+    {{ $currentPage := . }}
+    {{ range $.Site.Menus.main.ByWeight }}
+    <li class="nav-item{{if or ($currentPage.IsMenuCurrent "main" . ) ($currentPage.HasMenuCurrent "main" . ) }} active{{ end }}{{ if .HasChildren }} dropdown{{ end }}">
+      <a class="nav-link" href="{{ .URL }}">{{ .Title }}{{ if .HasChildren }} <span class="icon icon-angle-down"></span>{{ end }}</a>
+      {{ if .HasChildren }}
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <ul class="dropdown-menu">
+        {{ range .Children.ByWeight }}
+        <li class="dropdown-item">
+          <a class="nav-link" href="{{ .URL }}">{{ .Title }}</a>
+        </li>{{ end }}
+      </ul>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
 </nav>
 {{- end -}}
 

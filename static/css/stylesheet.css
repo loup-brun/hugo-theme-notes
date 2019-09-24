@@ -32,8 +32,12 @@ body {
 }
 
 .navbar {
-  padding: .5rem 0;
+  padding: 0;
   font-size: 13px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 .post a {

@@ -3,7 +3,14 @@
   <li>
     <div class="row" id="posts">
       <div class="d-none d-sm-block col-sm-3 col-md-2 date-time-title">
+        {{ if isset .Params "date" }}
         <time class="date-time">{{ .Date.Format "2006/01/02" }}</time>
+        {{ else }}
+        {{/* `.Lastmod` doesn't seem to work at the moment (Hugo v0.58) */}}
+        {{/* .Lastmod.Format "2006/01/02" */}}
+        {{/* Defaulting to ND */}}
+        <i>(Sans date)</i>
+        {{ end }}
       </div>
       <div class="col-sm date-time-title post">
         <a href="{{ .Permalink }}">
@@ -14,7 +21,7 @@
           {{- else if isset .Params .Parent.Section -}}
           {{ .Parent.Section | title }} {{ .Param .Parent.Section }}
           {{- else -}}
-          (Sans titre)
+          {{ .File.BaseFileName | title }}
           {{- end -}}
         </a>
         

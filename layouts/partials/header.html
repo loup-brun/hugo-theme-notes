@@ -1,8 +1,8 @@
-{{- if .Site.Menus.main -}}
+{{- if .Site.Menus.links -}}
 <nav class="navbar navbar-expand navbar-light">
   <ul class="nav navbar-nav">
     {{ $currentPage := . }}
-    {{ range $.Site.Menus.main.ByWeight }}
+    {{ range $.Site.Menus.links.ByWeight }}
     <li class="nav-item{{if or ($currentPage.IsMenuCurrent "main" . ) ($currentPage.HasMenuCurrent "main" . ) }} active{{ end }}{{ if .HasChildren }} dropdown{{ end }}">
       <a class="nav-link" href="{{ .URL }}">{{ .Title }}{{ if .HasChildren }} <span class="icon icon-angle-down"></span>{{ end }}</a>
       {{ if .HasChildren }}

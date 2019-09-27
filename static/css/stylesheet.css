@@ -1,3 +1,124 @@
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3281696, 2016-09-12T10:30:42-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: CharterBT-Roman by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/charter/
+ * 
+ * Webfont: CharterBT-Italic by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/italic/
+ * 
+ * Webfont: CharterBT-Black by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/black/
+ * 
+ * Webfont: CharterBT-BlackItalic by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/black-italic/
+ * 
+ * Webfont: CharterOSFBT-Roman by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/osf-roman/
+ * 
+ * Webfont: CharterOSFBT-Italic by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/osf-italic/
+ * 
+ * Webfont: CharterOSFBT-Black by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/osf-black/
+ * 
+ * Webfont: CharterOSFBT-BlackItalic by Bitstream
+ * URL: httphttps://www.myfonts.comhttps://assets.loupbrun.ca/fonts/bitstream/charter/osf-black-italic/
+ * 
+ * 
+ * License: httphttps://www.myfonts.com/viewlicense?type=web&buildid=3281696
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * 
+ * © 2016 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+/*@import url("//hello.myfonts.net/count/321320");*/
+
+
+@font-face {
+	font-family: 'Charter';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_0_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_0_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_0_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_0_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_0_0.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Charter';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_1_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_1_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_1_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_1_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_1_0.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+@font-face {
+	font-family: 'Charter';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_2_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_2_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_2_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_2_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_2_0.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Charter';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_3_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_3_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_3_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_3_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_3_0.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+/*
+
+@font-face {
+	font-family: 'CharterOSFBT-Roman';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_4_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_4_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_4_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_4_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_4_0.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'CharterOSFBT-Italic';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_5_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_5_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_5_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_5_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_5_0.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+
+
+@font-face {
+	font-family: 'CharterOSFBT-Black';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_6_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_6_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_6_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_6_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_6_0.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'CharterOSFBT-BlackItalic';
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_7_0.eot');
+	src: url('https://assets.loupbrun.ca/fonts/charter/321320_7_0.eot?#iefix') format('embedded-opentype'), url('https://assets.loupbrun.ca/fonts/charter/321320_7_0.woff2') format('woff2'), url('https://assets.loupbrun.ca/fonts/charter/321320_7_0.woff') format('woff'), url('https://assets.loupbrun.ca/fonts/charter/321320_7_0.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+*/
+
 body {
   font-family: Charter, 'CharterITC', 'ITC Charter Std', Georgia, serif;
   margin: auto;
@@ -206,4 +327,22 @@ footer {
   font-family: 'Ubuntu Mono', monospace;
   letter-spacing: .1em;
   font-weight: normal;
+}
+
+.main-content img {
+  margin: 2rem auto;
+}
+
+/* TABLES */
+table {
+  margin: 2rem auto;
+}
+th, td {
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+
+th {
+  border-bottom-color: black;
+  border-bottom-width: 2px;
 }

@@ -1,29 +1,58 @@
 {{ define "content" }}
 <main class="main">
   <article class="main-content">
-    
-    {{ .Content }}
-    
-    {{ if .Sections }}
-    
-    {{ range .Sections }}
-    <h2 class="mt-0">
-      <a href="{{ .Permalink }}">
-        {{- .Title -}}
-      </a>
-    </h2>
-    
-    {{ partial "posts-listing.html" . }}
 
+    {{ if .Sections }}
+
+    <section class="section--content">
+      {{ .Content }}
+    </section>
+
+    {{ range .Sections.ByTitle }}
+
+    <section class="section--subsections">
+      <h2 class="mt-0">
+        <a href="{{ .Permalink }}">
+          {{- .Title -}}
+        </a>
+      </h2>
+
+      {{ partial "posts-listing.html" . }}
+    </section>
     {{ end }}
     
     {{ else }}
-  
-    {{ with .Title }}
-    <h1 class="mt-0">{{ . }}</h1>
+
+    <section class="section--current">
+      {{ with .Title }}
+      <h1 class="mt-0">{{ . }}</h1>
+      {{ end }}
+
+      <section class="section--content">
+        {{ .Content }}
+      </section>
+
+      {{ partial "posts-listing.html" . }}
+    </section>
     {{ end }}
 
-    {{ partial "posts-listing.html" . }}
+    {{ if .IsHome }}
+    {{ $readmeFiles := split "README.md,README.markdown,README.txt" "," }}
+    {{ range $readmeFiles }}
+    {{ if fileExists . }}
+    <hr>
+    <section class="section--readme card" id="readme">
+      
+      <label class="badge badge-light small text-uppercase">
+        <a href="#readme">README</a>
+      </label>
+      
+      <div class="card-body">
+        {{readFile . | markdownify }}
+      </div>
+    </section>
+    {{ end }}
+    {{ end }}
     {{ end }}
   </article>
 </main>

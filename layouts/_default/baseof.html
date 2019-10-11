@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html {{- if .Draft }} class="is-draft"{{- end -}}>
+<html lang="{{ .Language.Lang  | default "fr" }}" {{- if .Draft }} class="is-draft"{{- end -}}>
 
   {{- partial "head" . -}}
 
@@ -18,7 +18,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     
     <script src="{{ "/js/gumshoe.min.js" | relURL }}"></script>
-    <script src="{{ "js/smooth-scroll.min.js" | relURL }}"></script>
+    <script src="{{ "/js/smooth-scroll.min.js" | relURL }}"></script>
+    <script src="{{ "/js/espacefine.min.js" | relURL }}"></script>
     
 
     <script>
@@ -38,10 +39,17 @@
         };
       };
     </script>
+    
+    {{ if in .Language.Lang "FR" }}
+    <script>
+      espaceFine();
+    </script>
+    {{ end }}
 
     {{ if .Params.hypothesis }}
     <script src="https://hypothes.is/embed.js" async></script>
     {{ end }}
+
     <script>
       // Gumshoe for navigation
       var tocElem = document.getElementById('TableOfContents');

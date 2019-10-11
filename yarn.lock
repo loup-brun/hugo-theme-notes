@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"espacefine@https://github.com/victorloux/espaceFine":
+  version "2.0.0"
+  resolved "https://github.com/victorloux/espaceFine#6cdb363fc648abd68999b9ad1be8620ef9e14494"
+
 gumshoejs@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/gumshoejs/-/gumshoejs-5.1.2.tgz#82748afe83f3b76cbaef029e58322262f853b7d2"

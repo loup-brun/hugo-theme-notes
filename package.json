@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "espacefine": "https://github.com/victorloux/espaceFine",
     "gumshoejs": "^5.1.2",
     "smooth-scroll": "^16.1.0"
   }

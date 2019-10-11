@@ -346,3 +346,10 @@ th {
   border-bottom-color: black;
   border-bottom-width: 2px;
 }
+
+/* hypothes.is */
+
+body .annotator-frame .annotator-bucket-bar {
+  background-color: transparent;
+  background-image: linear-gradient(-90deg, rgba(255,255,255,1), rgba(255,255,255,0));
+}

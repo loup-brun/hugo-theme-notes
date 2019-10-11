@@ -20,13 +20,39 @@
     <script src="{{ "/js/gumshoe.min.js" | relURL }}"></script>
     <script src="{{ "js/smooth-scroll.min.js" | relURL }}"></script>
     
+
+    <script>
+      window.hypothesisConfig = function () {
+        return { 
+          branding: {
+            theme: 'clean',
+            appBackgroundColor: 'white',
+            ctaBackgroundColor: 'black',
+            ctaTextColor: 'white',
+            selectionFontFamily: 'Charter, Geogria, serif',
+            annotationFontFamily: 'Ubuntu Mono, monospace'
+          },
+          {{ range $elem_index, $elem_val := .Params.hypothesis_config }}
+          {{ $elem_index }}: '{{ $elem_val }}',
+          {{ end }}
+        };
+      };
+    </script>
+
+    {{ if .Params.hypothesis }}
+    <script src="https://hypothes.is/embed.js" async></script>
+    {{ end }}
     <script>
       // Gumshoe for navigation
-      var spy = new Gumshoe('#TableOfContents a', {
-          nested: true,
-          nestedClass: 'active-parent'
-      });
-      
+      var tocElem = document.getElementById('TableOfContents');
+      // Only init Gumshoe if there is a TOC
+      if (tocElem) {
+        var spy = new Gumshoe('#TableOfContents a', {
+            nested: true,
+            nestedClass: 'active-parent'
+        });
+      }
+
       // Smooth Scroll for animating anchors
       var scroll = new SmoothScroll('a[href*="#"]', {
         speed: 200,

@@ -13,7 +13,7 @@
     <section class="section--subsections">
       <h2 class="mt-0">
         <a href="{{ .Permalink }}">
-          {{- .Title -}}
+          {{- .Title | markdownify -}}
         </a>
       </h2>
 
@@ -25,7 +25,7 @@
 
     <section class="section--current">
       {{ with .Title }}
-      <h1 class="mt-0">{{ . }}</h1>
+      <h1 class="mt-0">{{ . | markdownify }}</h1>
       {{ end }}
 
       <section class="section--content">

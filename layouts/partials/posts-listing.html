@@ -15,7 +15,7 @@
       <div class="col-sm date-time-title post">
         <a href="{{ .Permalink }}">
           {{ if isset .Params "title" }}
-          {{ .Title }}
+          {{ .Title | markdownify }}
           {{- else if (eq .Section "notes") -}}
           Séance {{ .Param "seance" }}
           {{- else if isset .Params .Parent.Section -}}

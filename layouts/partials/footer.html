@@ -14,7 +14,10 @@
       <a href="{{ .Site.Params.repo }}" target="_blank">Dépôt</a>
       {{ if .File }}
       |
-      <a href="{{ .Site.Params.repo }}/raw/branch/master/{{if not .Site.Params.repoIsContent }}content/{{end}}{{ .File.Path }}" target="_blank">Fichier source de cette page</a>
+      <a href="{{ .Site.Params.repo }}/raw/commit/{{ .GitInfo.Hash }}/{{if not .Site.Params.repoIsContent }}content/{{end}}{{ .File.Path }}" target="_blank">Fichier source de cette page</a>
+      |
+      <a href="{{ .Site.Params.repo }}/commits/commit/{{ .GitInfo.Hash }}/{{if not .Site.Params.repoIsContent }}content/{{end}}{{ .File.Path }}" target="_blank">Historique</a>
+      
       {{ end }}
     </small>
   </span>

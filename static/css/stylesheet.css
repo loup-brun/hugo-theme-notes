@@ -176,7 +176,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.main-subheader time {
+time {
   display: inline;
   font-family: 'Ubuntu Mono', monospace;
 }
@@ -232,6 +232,9 @@ body {
 .main-content {
   padding-top: 1em;
   padding-bottom: 1em;
+  
+  /* for anchor marks */
+  position: relative;
 }
 
 .main-content img {
@@ -290,7 +293,7 @@ h6 {
   font-size: 0.8rem;
 }
 
-p {
+p, ul, ol {
   margin-bottom: 2rem;
 }
 
@@ -312,6 +315,10 @@ pre {
   border: 1px solid lighten(#111, 90);
   background-color: #efefef;
   border-radius: 3px;
+}
+
+hr {
+  margin: 2rem auto;
 }
 
 mark {
@@ -345,6 +352,29 @@ th, td {
 th {
   border-bottom-color: black;
   border-bottom-width: 2px;
+}
+
+/* marker */
+
+.marker-anchor {
+  font-size: 0.6em;
+  margin: 0 .5em;
+  font-variant: small-caps;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 1100px) {
+  .marker-anchor {
+    position: absolute;
+    width: 70px;
+    left: -68px;
+    transform: translateY(.4em);
+    text-align: right;
+
+  }
+}
+
+.marker-mark {
 }
 
 /* hypothes.is */

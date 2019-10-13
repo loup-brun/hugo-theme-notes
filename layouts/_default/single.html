@@ -15,11 +15,17 @@
     <header class="main-subheader">
       {{ if isset .Params "date" }}
       <time class="date-time">{{ .Date.Format "2006/01/02" }}</time>
-      {{ else }}
-      {{/* `.Lastmod` doesn't seem to work at the moment (Hugo v0.58) */}}
-      {{/* .Lastmod.Format "2006/01/02" */}}
-      {{/* Defaulting to ND */}}
-<!--      <i>(Sans date)</i>-->
+      {{ end }}
+      
+      {{ if .Lastmod }}
+      <div class="small">
+        (dernière modification :&nbsp;
+        {{- if .Site.Params.repo -}}
+        <a href="{{ .Site.Params.repo }}/commit/{{ .GitInfo.Hash }}" target="_blank"><time class="date-time">{{ .GitInfo.AuthorDate.Format "2006/01/02" }}</time></a>
+        {{- else -}}
+        <time class="date-time">{{ .Lastmod "2006/01/02" }}</time>
+        {{- end -}})
+      </div>
       {{ end }}
 
       {{ if .Draft -}}
@@ -30,7 +36,12 @@
     </header>
 
     {{ .Content }}
-
+    
+    <footer>
+      {{ if .PrevInSection }}<a class="pu9ll-left" href="{{ .PrevInSection.Permalink }}">&larr; Précédente{{ with .PrevInSection.Title }} : <em>{{ . }}</em>{{ end }}</a>{{ end }}
+      {{ if and .PrevInSection .NextInSection}} | {{ end }}
+      {{ if .NextInSection }}<a class="pull-right" href="{{ .NextInSection.Permalink }}">Suivante{{ with .NextInSection.Title }} : <em>{{ . }}</em>{{ end }} &rarr;</a>{{ end }}
+    </footer>
   </article>
 </main>
 {{ end }}

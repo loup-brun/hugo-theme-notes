@@ -16,7 +16,7 @@
         <a href="{{ .Permalink }}">
           {{ if isset .Params "title" }}
           {{ .Title | markdownify }}
-          {{- else if (eq .Section "notes") -}}
+          {{- else if and (eq .Section "notes") (isset . "seance") -}}
           Séance {{ .Param "seance" }}
           {{- else if isset .Params .Parent.Section -}}
           {{ .Parent.Section | title }} {{ .Param .Parent.Section }}
@@ -26,8 +26,8 @@
         </a>
         
         {{ if .Draft -}}
-        <span class="badge badge-dark">
-          BROUILLON
+        <span class="badge badge-dark text-uppercase">
+          {{ T "draft" | default "BROUILLON" }}
         </span>
         {{- end -}}
       </div>

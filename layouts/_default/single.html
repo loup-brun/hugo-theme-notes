@@ -19,28 +19,28 @@
       
       {{ if .Lastmod }}
       <div class="small">
-        (dernière modification :&nbsp;
-        {{- if .Site.Params.repo -}}
+        ({{i18n "last_mod" | default "dernière modification" }} :&nbsp;
+        {{- if and .Site.Params.repo .GitInfo -}}
         <a href="{{ .Site.Params.repo }}/commit/{{ .GitInfo.Hash }}" target="_blank"><time class="date-time">{{ .GitInfo.AuthorDate.Format "2006/01/02" }}</time></a>
         {{- else -}}
-        <time class="date-time">{{ .Lastmod "2006/01/02" }}</time>
+        <time class="date-time">{{ .Lastmod.Format "2006/01/02" }}</time>
         {{- end -}})
       </div>
       {{ end }}
 
       {{ if .Draft -}}
-      <span class="badge badge-dark">
-        BROUILLON
+      <span class="badge badge-dark text-uppercase">
+        {{ T "draft" | default "BROUILLON" }}
       </span>
       {{- end -}}
     </header>
 
     {{ .Content }}
     
-    <footer>
-      {{ if .PrevInSection }}<a class="pu9ll-left" href="{{ .PrevInSection.Permalink }}">&larr; Précédente{{ with .PrevInSection.Title }} : <em>{{ . }}</em>{{ end }}</a>{{ end }}
-      {{ if and .PrevInSection .NextInSection}} | {{ end }}
-      {{ if .NextInSection }}<a class="pull-right" href="{{ .NextInSection.Permalink }}">Suivante{{ with .NextInSection.Title }} : <em>{{ . }}</em>{{ end }} &rarr;</a>{{ end }}
+    <footer class="article-footer">
+      {{ if .PrevInSection }}<a class="article-footer-button" href="{{ .PrevInSection.Permalink }}">&lt; {{ i18n "prev_page" | default "Page précédente" }}</a>{{ end }}
+      <br>
+      {{ if .NextInSection }}<a class="article-footer-button" href="{{ .NextInSection.Permalink }}">{{ i18n "next_page" | default "Page suivante" }} &gt;</a>{{ end }}
     </footer>
   </article>
 </main>

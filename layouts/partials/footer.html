@@ -2,8 +2,8 @@
   <hr>
   <span class="license-text">
     <small>
-      Contenu sous licence <a href="{{ .Site.Params.license.url | default "/LICENSE" | relURL }}" target="_blank">{{ .Site.Params.license.name | default "CC-BY-SA 4.0" }}</a>
-      {{ with .Site.Params.author }}par {{ . }} {{ end }}({{ now.Format "2006" }}).
+      {{ i18n "content_licensed_undery" | default "Contenu sous licence" }} <a href="{{ .Site.Params.license.url | default "/LICENSE" | relURL }}" target="_blank">{{ .Site.Params.license.name | default "CC-BY-SA 4.0" }}</a>
+      {{ with .Site.Params.author }}{{i18n "by" | default "par" }} {{ . }} {{ end }}({{ now.Format "2006" }}).
 <!--          Généré avec <a href="https://gohugo.io/" target="_blank">Hugo</a> avec le thème <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a>.-->
     </small>
   </span>
@@ -11,12 +11,12 @@
   {{ if .Site.Params.repo }}
   <span class="repo-text">
     <small>
-      <a href="{{ .Site.Params.repo }}" target="_blank">Dépôt</a>
-      {{ if .File }}
+      <a href="{{ .Site.Params.repo }}" target="_blank">{{ i18n "repo" | default "Dépôt" }}</a>
+      {{ if and .File .GitInfo }}
       |
-      <a href="{{ .Site.Params.repo }}/raw/commit/{{ .GitInfo.Hash }}/{{if not .Site.Params.repoIsContent }}content/{{end}}{{ .File.Path }}" target="_blank">Fichier source de cette page</a>
+      <a href="{{ .Site.Params.repo }}/raw/commit/{{ .GitInfo.Hash }}/{{if not .Site.Params.repoIsContent }}content/{{end}}{{ .File.Path }}" target="_blank">{{ i18n "source_file_pages" | default "Fichier source de cette page" }}</a>
       |
-      <a href="{{ .Site.Params.repo }}/commits/commit/{{ .GitInfo.Hash }}/{{if not .Site.Params.repoIsContent }}content/{{end}}{{ .File.Path }}" target="_blank">Historique</a>
+      <a href="{{ .Site.Params.repo }}/commits/commit/{{ .GitInfo.Hash }}/{{if not .Site.Params.repoIsContent }}content/{{end}}{{ .File.Path }}" target="_blank">{{ i18n "history" | default "Historique" }}</a>
       
       {{ end }}
     </small>

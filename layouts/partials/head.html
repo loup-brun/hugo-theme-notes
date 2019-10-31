@@ -18,7 +18,7 @@
     {{ .Title | title }} | 
     {{- else if isset .Params "title" -}}
     {{- .Title }} | 
-    {{- else if (eq .Section "notes") -}}
+    {{- else if and (eq .Section "notes") (isset . "seance") -}}
     Séance {{ .Param "seance" }} | 
     {{ else if isset .Params .Section -}}
     {{- .Parent.Section | title }} {{ .Param .Section }} | 

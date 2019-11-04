@@ -407,6 +407,10 @@ body .annotator-frame .annotator-bucket-bar {
 body.annotator-highlights-always-on .annotator-hl {
   background-color: rgba(0, 255, 250, 0.33);
 }
+body.annotator-highlights-always-on .annotator-hl .annotator-hl {
+  background-color: rgba(0, 255, 250, 0.2);
+}
+
 body .annotator-hl.annotator-hl-focused {
   background-color: rgba(255, 0, 200, 0.5) !important;
 }

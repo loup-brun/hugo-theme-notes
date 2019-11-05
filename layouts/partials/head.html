@@ -18,7 +18,7 @@
     {{ .Title | title }} | 
     {{- else if isset .Params "title" -}}
     {{- .Title }} | 
-    {{- else if and (eq .Section "notes") (isset . "seance") -}}
+    {{- else if and (eq .Section "notes") (isset .Params "seance") -}}
     Séance {{ .Param "seance" }} | 
     {{ else if isset .Params .Section -}}
     {{- .Parent.Section | title }} {{ .Param .Section }} | 
@@ -35,4 +35,18 @@
   <link rel="canonical" href="{{ .Permalink }}" />
   
   {{ template "_internal/opengraph.html" . }}
+  
+  <meta property="og:title" content="
+    {{- if eq .Page.Kind "section" -}}
+    {{ .Title | title }} | 
+    {{- else if isset .Params "title" -}}
+    {{- .Title }} | 
+    {{- else if and (eq .Section "notes") (isset .Params "seance") -}}
+    Séance {{ .Param "seance" }} | 
+    {{ else if isset .Params .Section -}}
+    {{- .Parent.Section | title }} {{ .Param .Section }} | 
+    {{ end -}}
+    {{ with .Site.Title }}
+    {{ . -}}
+    {{- end -}}"/>
 </head>

@@ -1,8 +1,8 @@
 <ul class="posts_listing">
   {{ range .Pages.ByDate }}
-  <li>
+  <li class="mt-2 mt-md-0">
     <div class="row" id="posts">
-      <div class="d-none d-sm-block col-sm-3 col-md-2 date-time-title">
+      <div class="col-sm-3 col-md-2 date-time-title">
         {{ if isset .Params "date" }}
         <time class="date-time">{{ .Date.Format "2006/01/02" }}</time>
         {{ else }}

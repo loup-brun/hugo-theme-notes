@@ -187,7 +187,17 @@ time {
 }
 
 .date-time-title {
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Ubuntu Mono', monospace;  
+}
+
+
+.date-time {
+  font-size: .8em;
+}
+@media (min-width: 680px) {
+  .date-time {
+    font-size: 1em;
+  }
 }
 
 .main {

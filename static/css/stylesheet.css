@@ -414,13 +414,13 @@ body .annotator-frame .annotator-bucket-bar {
   background-image: linear-gradient(-90deg, rgba(255,255,255,1), rgba(255,255,255,0));
 }
 
-body.annotator-highlights-always-on .annotator-hl {
+body.annotator-highlights-always-on .hypothesis-highlight {
   background-color: rgba(0, 255, 250, 0.33);
 }
-body.annotator-highlights-always-on .annotator-hl .annotator-hl {
+body.annotator-highlights-always-on .hypothesis-highlight .hypothesis-highlight {
   background-color: rgba(0, 255, 250, 0.2);
 }
 
-body .annotator-hl.annotator-hl-focused {
+body .hypothesis-highlight.hypothesis-highlight-focused {
   background-color: rgba(255, 0, 200, 0.5) !important;
 }

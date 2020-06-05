@@ -20,7 +20,7 @@
     <script src="{{ "/js/gumshoe.min.js" | relURL }}"></script>
     <script src="{{ "/js/smooth-scroll.min.js" | relURL }}"></script>
     <script src="{{ "/js/espacefine.min.js" | relURL }}"></script>
-    <script src="{{ "/js/mark.js" | relURL }}"></script>
+    <script src="{{ "/js/markThat.js" | relURL }}"></script>
     
 
     <script>
@@ -72,8 +72,7 @@
       // mark.js
       // convert == -> <mark>
       var article = document.querySelector('.main')
-      article.innerHTML = mark(article.innerHTML);
-      console.log(mark);
+      article.innerHTML = markThat(article.innerHTML);
     </script>
   </body>
 </html>

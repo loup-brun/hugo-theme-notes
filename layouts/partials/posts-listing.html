@@ -16,7 +16,7 @@
         <a href="{{ .Permalink }}">
           {{ if isset .Params "title" }}
           {{ .Title | markdownify }}
-          {{- else if and (eq .Section "notes") (isset .Params "seance") -}}
+          {{- else if and (eq .Section "seances") (isset .Params "seance") -}}
           Séance {{ .Param "seance" }}
           {{- else if isset .Params .Parent.Section -}}
           {{ .Parent.Section | title }} {{ .Param .Parent.Section }}

@@ -14,7 +14,7 @@ Based on the [Elephants theme](https://themes.gohugo.io/elephants/) and [Basics]
 
 From your hugo site, run:
 ```
-git submodule add https://github.com/loup-brun/hugo-theme-notes.git themes/basics
+git submodule add https://git.loupbrun.ca/louis/hugo-theme-notes.git themes/hugo-theme-notes
 ```
 
 ### Writing Posts
@@ -30,9 +30,9 @@ Your directory should look something like this:
 ├── config.yaml
 ├── content
 │   ├── about.md
-│   └── notes
-│       ├── seance00.md
-│       └── seance01.md
+│   └── seances
+│       ├── 00.md
+│       └── 01.md
 ├── data
 ├── layouts
 ├── static
